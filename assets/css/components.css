@@ -1,0 +1,125 @@
+/* ==========================================================================
+   components.css — team card, description overlay, link button
+   ========================================================================== */
+
+/* --- Team card ------------------------------------------------------------ */
+
+.team-card {
+  width: 100%;
+  max-width: 288px;
+  padding: var(--space-2);
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+}
+
+.team-card--dark {
+  background: var(--color-surface-alt);
+  color: var(--color-on-dark);
+}
+
+/* The photo and the vertical role label sit side by side, as in the original
+   design. The frame is the positioning context for the overlay and the
+   full-area toggle. */
+.team-card__frame {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+}
+
+/* min-width: 0 lets the photo shrink so the role label stays inside the card;
+   without it the image keeps its intrinsic minimum and pushes the label out. */
+.team-card__photo {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: 100%;
+  border-radius: var(--radius);
+}
+
+.team-card__role {
+  flex: 0 0 auto;
+  writing-mode: vertical-rl;
+  padding-block: var(--space-1);
+  padding-inline: var(--space-1);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.team-card__name {
+  padding: var(--space-3) var(--space-1) var(--space-1);
+}
+
+/* --- Description overlay -------------------------------------------------- */
+
+.team-card__bio {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  padding: var(--space-3);
+  border-radius: var(--radius);
+  background: var(--color-overlay);
+  color: var(--color-on-dark);
+  font-size: var(--text-sm);
+  line-height: 1.55;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity var(--transition), visibility var(--transition);
+}
+
+.team-card__bio.is-open {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* --- Card toggle ---------------------------------------------------------- */
+
+/* Transparent button covering the whole frame: the entire portrait stays
+   clickable, and the control is reachable by keyboard. */
+.team-card__toggle {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.team-card__toggle:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 4px;
+}
+
+/* --- Link button ---------------------------------------------------------- */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-ink);
+  border-radius: var(--radius);
+  background: var(--color-ink);
+  color: var(--color-on-dark);
+  font-size: var(--text-sm);
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background var(--transition), color var(--transition);
+}
+
+.button:hover,
+.button:focus-visible {
+  background: transparent;
+  color: var(--color-ink);
+}
+
+.button:active {
+  background: var(--color-ink-muted);
+  border-color: var(--color-ink-muted);
+  color: var(--color-on-dark);
+}

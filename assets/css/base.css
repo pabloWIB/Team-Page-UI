@@ -1,0 +1,180 @@
+/* ==========================================================================
+   base.css — design tokens, reset, base typography, utilities
+   ========================================================================== */
+
+/* --- Tokens --------------------------------------------------------------- */
+
+:root {
+  /* Colour. Derived from the original design: white cards, dimgray cards,
+     near-black description overlay, white overlay text. */
+  --color-bg: #ffffff;
+  --color-ink: #111111;
+  --color-ink-muted: #5a5a5a;
+  --color-surface: #ffffff;
+  --color-surface-alt: #696969;
+  --color-overlay: rgba(13, 13, 13, 0.94);
+  --color-on-dark: #ffffff;
+  --color-rule: #e2e2e2;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+  --space-8: 96px;
+
+  /* Typography. Two families: a serif for display, the system sans for text.
+     Mirrors the Lora + Montserrat pairing the original CSS declared but never
+     shipped, without the network cost. */
+  --font-display: Georgia, "Times New Roman", Times, serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.8125rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-display: clamp(2rem, 6vw, 2.75rem);
+
+  --leading-tight: 1.2;
+  --leading-normal: 1.6;
+
+  /* Shape and motion */
+  --radius: 2px;
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.05), 0 6px 20px rgba(0, 0, 0, 0.06);
+  --transition: 180ms ease;
+}
+
+/* --- Reset ---------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+/* --- Base typography ------------------------------------------------------ */
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: var(--leading-tight);
+}
+
+h1 {
+  font-size: var(--text-display);
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-size: var(--text-lg);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: var(--text-xl);
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  transition: color var(--transition), text-decoration-color var(--transition);
+}
+
+a:hover {
+  color: var(--color-ink-muted);
+}
+
+a:active {
+  color: var(--color-ink);
+}
+
+/* --- Focus ---------------------------------------------------------------- */
+
+:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* --- Utilities ------------------------------------------------------------ */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: 10;
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-ink);
+  color: var(--color-on-dark);
+  text-decoration: none;
+  transform: translateY(-200%);
+  transition: transform var(--transition);
+}
+
+.skip-link:focus {
+  color: var(--color-on-dark);
+  transform: translateY(0);
+}
+
+/* --- Motion preference ---------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

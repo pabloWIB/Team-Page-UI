@@ -1,157 +1,118 @@
-![image](https://github.com/user-attachments/assets/395d87a8-6ecd-4828-84f1-09c2ebfe914e)
-# Team Page - The Creative Crew
+# Team-Page-UI
 
-A simple team showcase website displaying creative professionals from around the world. Perfect for learning how to build team/staff pages with HTML, CSS, and JavaScript.
+Team section component: six people in a card grid under a single "who we are" statement.
 
-## What It Shows
+[![Live demo](https://img.shields.io/badge/demo-teampage.wib.digital-2ea44f)](https://teampage.wib.digital)
+[![Hire me on Fiverr](https://img.shields.io/badge/Hire%20me%20on-Fiverr-1DBF73?style=for-the-badge&logo=fiverr&logoColor=white)](https://www.fiverr.com/pablonietop)
+![Dependencies](https://img.shields.io/badge/npm%20dependencies-0-brightgreen)
+![Build step](https://img.shields.io/badge/build%20step-none-lightgrey)
+![First load](https://img.shields.io/badge/first%20load-188%20KB-brightgreen)
 
-- Team member profiles with photos
-- Job titles and roles
-- "About Us" section
-- Clean, professional design
-- Responsive layout for all devices
+## Description
 
-## Team Members Featured
+A team page is one of the few pages on a company site that a visitor reads properly, because they are checking who they would be working with. That makes the photograph and the name the content, and everything else supporting.
 
-- **Bill Mahoney** - Product Owner
-- **Saba Cabrera** - Art Director  
-- **Shae Le** - Tech Leader
-- **Skylah Lu** - UX Designer
-- **Griff Richards** - Developer
-- **Stan John** - Developer
+This component keeps to that: a heading, one short statement about the group, and six cards. Bill Mahoney, Saba Cabrera, Shae Le, Skylah Lu, Griff Richards and Stan John each get a portrait, a name and a role, with nothing competing for attention around them. Selecting a portrait covers it with that person's short profile.
 
-## What's Inside
+It is a section rather than a site — the block you drop into an existing page, not a standalone destination.
 
-- **HTML**: Team member cards and layout
-- **CSS**: Professional styling and grid layout
-- **JavaScript**: Simple interactions (optional)
-- No servers needed!
+## Features
 
-## File Structure
+- Six team cards in a responsive grid: one column, two from 768px, three from 1024px.
+- Staggered middle column on wide screens, flattening to a single stack on phones.
+- Descriptions open on click or keyboard, one at a time, and close with `Escape`.
+- Cards are real `<button>` elements with `aria-expanded`, so the interaction works without a mouse.
+- Single group statement above the cards, kept short.
+- No npm dependencies, no build step, no external requests at runtime.
 
-```
-team-page/
-├── index.html          # Main team page
-├── style.css          # Team styling
-├── script.js          # Basic interactions
-├── images/
-│   ├── team/          # Team member photos
-│   └── icons/         # Role icons
-└── README.md
-```
+## Tech stack
 
-## How to Start
+| Layer | Technology | Role in project |
+|---|---|---|
+| Markup | HTML5 | `index.html`, `404.html` |
+| Styling | CSS3 with custom properties | `assets/css/` — tokens, layout, components |
+| Scripting | JavaScript (no framework) | `assets/js/main.js`, one delegated listener |
+| Images | WebP | Six portraits, 158 KB for all six |
+| Typography | Georgia + system sans | No webfont requests |
 
-1. **Get the code**
-   ```
-   Download from: https://github.com/pabloWIB/Team-page.git
-   ```
+## Prerequisites
 
-2. **Open it**
-   - Double-click `index.html`
-   - View in your browser
-   - That's it!
+None. Open `index.html` in any browser.
 
-3. **Add your team**
-   - Replace photos in `images/team/`
-   - Update names and roles in `index.html`
-   - Customize styling in `style.css`
+## Installation
 
-## Easy Customization
-
-**Add your team members:**
-```html
-<!-- In index.html -->
-<div class="team-member">
-  <img src="images/team/your-photo.jpg" alt="Your Name">
-  <h3>Your Name</h3>
-  <p>Your Role</p>
-</div>
+```bash
+git clone https://github.com/pabloWIB/Team-Page-UI.git
+cd Team-Page-UI
+npx serve .
 ```
 
-**Change colors:**
-```css
-/* In style.css */
-.team-card { background-color: #your-color; }
-.team-title { color: #your-text-color; }
+The page also runs correctly opened straight from the filesystem — there are no module imports or fetches that require a server.
+
+## Usage
+
+To reuse the block elsewhere, copy the `<section class="team">` markup from `index.html` along with the three stylesheets and `assets/js/main.js`. The script queries by class and exits quietly if `.team-grid` is not on the page, so it will not interfere with a host page.
+
+Adding a person means adding a `<li class="team-grid__item">` and a portrait to `assets/img/content/`. The grid reflows on its own — there is no column count to update. Two details to keep consistent when you do:
+
+- The `id` on `.team-card__bio` must match the `aria-controls` on that card's button.
+- Set `width` and `height` on the `<img>` to the file's real pixel dimensions, so the card reserves its space before the image arrives.
+
+## Project structure
+
+```
+.
+├── index.html              # The team section
+├── 404.html                # Not-found page, links back to index
+├── assets/
+│   ├── css/
+│   │   ├── base.css        # Design tokens, reset, typography, utilities
+│   │   ├── layout.css      # Container, header, grid, footer, breakpoints
+│   │   └── components.css  # Card, description overlay, link button
+│   ├── js/
+│   │   └── main.js         # Description toggles, delegated from the grid
+│   └── img/
+│       ├── content/        # Six portraits (WebP) and the Open Graph image
+│       └── logo/           # Favicon and apple-touch-icon
+├── docs/
+│   ├── auditoria.md        # State of the project before the rewrite
+│   └── cambios.md          # What changed, grouped by phase
+├── robots.txt
+├── sitemap.xml
+└── .gitignore
 ```
 
-**Update the description:**
-- Change "The Creative Crew" to your team name
-- Update the "WHO WE ARE?" section
-- Add your company/team description
+## Accessibility
 
-## Team Card Features
+- One `<h1>`, no skipped heading levels, landmarks on header, main and footer.
+- Every interactive element is reachable and operable by keyboard, with a visible focus ring.
+- All text passes WCAG AA contrast; the lowest pair on the page is white on `#696969` at 5.49:1.
+- Portraits carry descriptive `alt` text; the toggle buttons name the person they open.
+- Transitions collapse under `prefers-reduced-motion`.
 
-**Basic Layout:**
-- Photo placeholder or real images
-- Name and job title
-- Clean, card-based design
-- Hover effects (optional)
+## Known issues
 
-**Responsive Design:**
-- Works on desktop and mobile
-- Grid layout adjusts automatically
-- Images scale properly
+The six names, portraits and biographies are sample content. Replace them before using this as a real team page.
 
-## Beginner Tips
+`robots.txt`, `sitemap.xml` and the canonical and Open Graph URLs are all written against `https://teampage.wib.digital/`. Change that host in those four places if you deploy anywhere else.
 
-**For Photos:**
-- Use square images (400x400px works well)
-- Keep file sizes small (under 200KB)
-- Use JPG format for photos
-- Name files clearly (firstname-lastname.jpg)
+## Deployment
 
-**For Content:**
-- Keep job titles short and clear
-- Add brief descriptions if needed
-- Use consistent formatting
-- Test on different screen sizes
+Deployed on Vercel at [teampage.wib.digital](https://teampage.wib.digital). Static: upload the repository root as-is, no build command and no output directory. `404.html` is picked up automatically by static hosts.
 
-## What You Can Add Later
+## Author
 
-- Individual team member detail pages
-- Social media links for each person
-- Skills or expertise tags
-- Contact information
-- Team statistics or achievements
-
-## Free Hosting
-
-- **GitHub Pages**: Upload and go live
-- **Netlify**: Drag and drop deployment
-- **Vercel**: Quick static hosting
-
-## Common Uses
-
-- Company "About Us" pages
-- Agency team showcases
-- Project team introductions
-- Staff directory pages
-- Freelancer collective sites
-
-## Learning Opportunities
-
-**CSS Skills:**
-- Grid and Flexbox layouts
-- Card design patterns
-- Responsive design
-- Hover effects and transitions
-
-**HTML Structure:**
-- Semantic markup for teams
-- Image optimization
-- Accessibility best practices
-
-## Quick Customization Checklist
-
-- [ ] Replace team member photos
-- [ ] Update names and job titles
-- [ ] Change team name from "The Creative Crew"
-- [ ] Update "WHO WE ARE?" description
-- [ ] Adjust colors to match your brand
-- [ ] Test on mobile devices
+**Pablo Nieto Pérez** — [wib.digital](https://wib.digital)
+GitHub: [@pabloWIB](https://github.com/pabloWIB)
 
 ---
 
-*Build your team page and show off your creative crew!*
+## Hire me
+
+I build **custom internal tools, CRMs and dashboards** for small teams, and
+**conversion-focused websites** for businesses.
+
+- [Custom internal tool, CRM or dashboard](https://www.fiverr.com/pablonietop/build-a-custom-internal-app-for-your-business) — from $45
+- [Conversion-focused website](https://www.fiverr.com/pablonietop/convert-your-landing-page-design-to-code) — from $80
+- [All my services on Fiverr](https://www.fiverr.com/pablonietop)
+- [wib.digital](https://wib.digital)

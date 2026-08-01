@@ -1,94 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="CSS/normalize.css">
-	<link rel="stylesheet" href="CSS/styles.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.slim.min.js"></script>
-	<link rel="icon" type="image/x-icon" href="IMG/icon.png">
-	<script src="JS/script.js"></script>
-	<title>Team page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Creative Crew — Meet Our Team of Designers &amp; Developers</title>
+  <meta name="description" content="Meet the creative crew: six designers, developers and strategists working remotely across the world. Click any portrait to read that person's profile.">
+  <link rel="canonical" href="https://teampage.wib.digital/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The Creative Crew — Meet Our Team of Designers &amp; Developers">
+  <meta property="og:description" content="Six designers, developers and strategists working remotely across the world. Click any portrait to read that person's profile.">
+  <meta property="og:url" content="https://teampage.wib.digital/">
+  <meta property="og:image" content="https://teampage.wib.digital/assets/img/content/og-team.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Portraits of the six members of the creative crew in a row.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="assets/img/logo/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/logo/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+
+  <script src="assets/js/main.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Pablo Nieto Pérez",
+    "url": "https://wib.digital",
+    "jobTitle": "Web Designer and Developer",
+    "sameAs": [
+      "https://www.fiverr.com/pablonietop",
+      "https://www.linkedin.com/in/pablo-nieto-perez-39a530292"
+    ]
+  }
+  </script>
 </head>
-<body><br><br><br>
-	<div class="Main">
-		<header>
-			<div class="Header">
-				<div>
-					<h1>The creative crew</h1>
-				</div>
-				<div>
-					<h2>WHO WE ARE?</h2>
-					<p>We are team of creatively diverse. driven. <br> innovative individuals working in various <br> locations from the world.</p>
-				</div>
-			</div>
-		</header>
-		<article>
-			<div class="Content">
-				<div class="Caja-1">
-					<div class="Order1">
-						<img src="IMG/photo1.png" alt="Integrante">
-						<p>Product owner</p>
-						<P>Bill Mahoney is a Product Owner with a strong background in software development and project management. He is a strategic thinker with excellent communication and collaboration skills, and he thrives in dynamic, fast-paced environments.</P>		
-					</div>
-					<div>
-						<h3>Bill Mahoney</h3>
-					</div>			
-				</div>
-				<div class="Caja-2">
-					<div class="Order2">
-						<img src="IMG/photo2.png" alt="Integrante">
-						<p>Art director</p>	
-						<P>Saba Cabrera is a talented and experienced Art Director with a passion for creating visually stunning and engaging designs. With a strong background in graphic design, Saba has developed an eye for detail and a deep understanding of how to create compelling visual experiences that capture the attention of her audience.</P>	
-					</div>
-					<div>
-						<h3>Saba Cabrera</h3>
-					</div>	
-				</div>
-				<div class="Caja-3">
-					<div class="Order3">
-						<img src="IMG/photo3.png" alt="Integrante">
-						<p>Tech Leader</p>
-						<P>Shae Le is a seasoned Tech Lead with a strong background in software engineering and project management. She has a deep understanding of modern software development methodologies, with expertise in Agile and Scrum, and is committed to delivering high-quality solutions that meet business needs.</P>		
-					</div>
-					<div>
-						<h3>Shae Le</h3>
-					</div>	
-				</div>
-				<div class="Caja-4">
-					<div class="Order4">
-						<img src="IMG/photo4.png" alt="Integrante">
-						<p>UX Designer</p>
-						<P>Skylah Lu is a talented and experienced UX Designer with a passion for creating innovative and intuitive user experiences. With a strong background in user research, information architecture, and design, Skylah has the ability to take complex user needs and transform them into simple, elegant, and effective solutions.</P>		
-					</div>
-					<div>
-						<h3>Skylah Lu</h3>
-					</div>	
-				</div>
-				<div class="Caja-5">
-					<div class="Order5">
-						<img src="IMG/photo5.png" alt="Integrante">
-						<p>Developer</p>
-						<P>Griff Richards is a skilled and experienced software developer with a passion for creating innovative and effective software solutions. With a strong background in software engineering, Griff has the ability to take complex problems and turn them into simple and effective code.</P>		
-					</div>
-					<div>
-						<h3>Griff Richards</h3>
-					</div>	
-				</div>
-				<div class="Caja-6">
-					<div class="Order6">
-						<img src="IMG/photo6.png" alt="Integrante">
-						<p>Developer</p>
-						<P>Stan John is a skilled and experienced software developer with a passion for creating robust and effective software solutions. With a strong background in software engineering, Stan has the ability to tackle complex problems and deliver high-quality code.</P>
-					</div>
-					<div>
-						<h3>Stan John</h3>
-					</div>	
-				</div>
-			</div>
-		</article>	
-	</div>	
+
+<body>
+  <a class="skip-link" href="#main">Skip to the team</a>
+
+  <div class="page">
+    <header class="site-header">
+      <div class="site-header__inner">
+        <h1>The Creative Crew</h1>
+        <div class="site-header__intro">
+          <h2>Who we are</h2>
+          <p>We are a team of creatively diverse, driven and innovative individuals, working from locations all over the world.</p>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="team" aria-labelledby="team-heading">
+        <h2 class="visually-hidden" id="team-heading">The team</h2>
+
+        <ul class="team-grid">
+          <li class="team-grid__item">
+            <article class="team-card">
+              <div class="team-card__frame">
+                <img class="team-card__photo" src="assets/img/content/bill-mahoney.webp" alt="Bill Mahoney in a navy polo shirt, looking at the camera" width="476" height="682" decoding="async">
+                <p class="team-card__role">Product owner</p>
+                <p class="team-card__bio" id="bio-bill-mahoney">Bill Mahoney is a Product Owner with a strong background in software development and project management. He is a strategic thinker with excellent communication and collaboration skills, and he thrives in dynamic, fast-paced environments.</p>
+                <button class="team-card__toggle" type="button" aria-expanded="false" aria-controls="bio-bill-mahoney">
+                  <span class="visually-hidden">Read the profile of Bill Mahoney</span>
+                </button>
+              </div>
+              <h3 class="team-card__name">Bill Mahoney</h3>
+            </article>
+          </li>
+
+          <li class="team-grid__item team-grid__item--offset">
+            <article class="team-card team-card--dark">
+              <div class="team-card__frame">
+                <img class="team-card__photo" src="assets/img/content/saba-cabrera.webp" alt="Saba Cabrera in a red sweater, laughing" width="476" height="694" decoding="async">
+                <p class="team-card__role">Art director</p>
+                <p class="team-card__bio" id="bio-saba-cabrera">Saba Cabrera is a talented and experienced Art Director with a passion for creating visually stunning and engaging designs. With a strong background in graphic design, Saba has developed an eye for detail and a deep understanding of how to create compelling visual experiences that capture the attention of her audience.</p>
+                <button class="team-card__toggle" type="button" aria-expanded="false" aria-controls="bio-saba-cabrera">
+                  <span class="visually-hidden">Read the profile of Saba Cabrera</span>
+                </button>
+              </div>
+              <h3 class="team-card__name">Saba Cabrera</h3>
+            </article>
+          </li>
+
+          <li class="team-grid__item">
+            <article class="team-card">
+              <div class="team-card__frame">
+                <img class="team-card__photo" src="assets/img/content/shae-le.webp" alt="Shae Le in a white T-shirt, smiling" width="476" height="682" decoding="async">
+                <p class="team-card__role">Tech lead</p>
+                <p class="team-card__bio" id="bio-shae-le">Shae Le is a seasoned Tech Lead with a strong background in software engineering and project management. She has a deep understanding of modern software development methodologies, with expertise in Agile and Scrum, and is committed to delivering high-quality solutions that meet business needs.</p>
+                <button class="team-card__toggle" type="button" aria-expanded="false" aria-controls="bio-shae-le">
+                  <span class="visually-hidden">Read the profile of Shae Le</span>
+                </button>
+              </div>
+              <h3 class="team-card__name">Shae Le</h3>
+            </article>
+          </li>
+
+          <li class="team-grid__item">
+            <article class="team-card">
+              <div class="team-card__frame">
+                <img class="team-card__photo" src="assets/img/content/skylah-lu.webp" alt="Skylah Lu in a leopard-print top, laughing outdoors" width="474" height="682" loading="lazy" decoding="async">
+                <p class="team-card__role">UX designer</p>
+                <p class="team-card__bio" id="bio-skylah-lu">Skylah Lu is a talented and experienced UX Designer with a passion for creating innovative and intuitive user experiences. With a strong background in user research, information architecture, and design, Skylah has the ability to take complex user needs and transform them into simple, elegant, and effective solutions.</p>
+                <button class="team-card__toggle" type="button" aria-expanded="false" aria-controls="bio-skylah-lu">
+                  <span class="visually-hidden">Read the profile of Skylah Lu</span>
+                </button>
+              </div>
+              <h3 class="team-card__name">Skylah Lu</h3>
+            </article>
+          </li>
+
+          <li class="team-grid__item team-grid__item--offset">
+            <article class="team-card team-card--dark">
+              <div class="team-card__frame">
+                <img class="team-card__photo" src="assets/img/content/griff-richards.webp" alt="Griff Richards in a striped T-shirt, in front of a graffiti wall" width="476" height="694" loading="lazy" decoding="async">
+                <p class="team-card__role">Developer</p>
+                <p class="team-card__bio" id="bio-griff-richards">Griff Richards is a skilled and experienced software developer with a passion for creating innovative and effective software solutions. With a strong background in software engineering, Griff has the ability to take complex problems and turn them into simple and effective code.</p>
+                <button class="team-card__toggle" type="button" aria-expanded="false" aria-controls="bio-griff-richards">
+                  <span class="visually-hidden">Read the profile of Griff Richards</span>
+                </button>
+              </div>
+              <h3 class="team-card__name">Griff Richards</h3>
+            </article>
+          </li>
+
+          <li class="team-grid__item">
+            <article class="team-card">
+              <div class="team-card__frame">
+                <img class="team-card__photo" src="assets/img/content/stan-john.webp" alt="Stan John in a grey sweatshirt, looking at the camera" width="474" height="682" loading="lazy" decoding="async">
+                <p class="team-card__role">Developer</p>
+                <p class="team-card__bio" id="bio-stan-john">Stan John is a skilled and experienced software developer with a passion for creating robust and effective software solutions. With a strong background in software engineering, Stan has the ability to tackle complex problems and deliver high-quality code.</p>
+                <button class="team-card__toggle" type="button" aria-expanded="false" aria-controls="bio-stan-john">
+                  <span class="visually-hidden">Read the profile of Stan John</span>
+                </button>
+              </div>
+              <h3 class="team-card__name">Stan John</h3>
+            </article>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Built by <a href="https://wib.digital" rel="noopener">wib.digital</a> —
+        <a href="https://www.fiverr.com/pablonietop" rel="noopener">hire me on Fiverr</a>
+      </p>
+    </footer>
+  </div>
 </body>
 </html>
-
-
