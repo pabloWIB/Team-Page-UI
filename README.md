@@ -2,7 +2,7 @@
 
 Team section component: six people in a card grid under a single "who we are" statement.
 
-[![Live demo](https://img.shields.io/badge/demo-teampage.wib.digital-2ea44f)](https://teampage.wib.digital)
+[![Live demo](https://img.shields.io/badge/demo-pablowib.github.io/Team-Page-UI-2ea44f)](https://pablowib.github.io/Team-Page-UI)
 [![Hire me on Fiverr](https://img.shields.io/badge/Hire%20me%20on-Fiverr-1DBF73?style=for-the-badge&logo=fiverr&logoColor=white)](https://www.fiverr.com/pablonietop)
 ![Dependencies](https://img.shields.io/badge/npm%20dependencies-0-brightgreen)
 ![Build step](https://img.shields.io/badge/build%20step-none-lightgrey)
@@ -94,11 +94,11 @@ Adding a person means adding a `<li class="team-grid__item">` and a portrait to 
 
 The six names, portraits and biographies are sample content. Replace them before using this as a real team page.
 
-`robots.txt`, `sitemap.xml` and the canonical and Open Graph URLs are all written against `https://teampage.wib.digital/`. Change that host in those four places if you deploy anywhere else.
+`robots.txt`, `sitemap.xml` and the canonical and Open Graph URLs are all written against `https://pablowib.github.io/Team-Page-UI/`. Change that host in those four places if you deploy anywhere else.
 
 ## Deployment
 
-Deployed on Vercel at [teampage.wib.digital](https://teampage.wib.digital). Static: upload the repository root as-is, no build command and no output directory. `404.html` is picked up automatically by static hosts.
+Deployed on GitHub Pages at [pablowib.github.io/Team-Page-UI](https://pablowib.github.io/Team-Page-UI). Static: upload the repository root as-is, no build command and no output directory. `404.html` is picked up automatically by static hosts.
 
 ## Author
 
